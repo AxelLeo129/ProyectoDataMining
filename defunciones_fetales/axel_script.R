@@ -1,0 +1,13 @@
+library(haven)
+library(foreign)
+library(dplyr)
+setwd("D:/AxelFolder/University/mineria_de_datos/ProyectoDataMining/defunciones_fetales")
+
+DefDef2012 <- read_sav("defuncionesFetales2012.sav")  
+DefDef2013 <- read_sav("defuncionesFetales2013.sav")
+DefDef2014 <- read_sav("defuncionesFetales2014.sav")
+DefDef2015 <- read_sav("defuncionesFetales2015.sav")
+DefDef2016 <- read_sav("defuncionesFetales2016.sav")
+DefDef2017 <- read_sav("defuncionesFetales2017.sav")
+DefDef2018 <- read_sav("defuncionesFetales2018.sav")
+DefDef2019 <- read_sav("defuncionesFetales2019.sav")
