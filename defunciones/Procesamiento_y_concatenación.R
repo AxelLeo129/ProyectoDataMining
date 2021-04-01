@@ -68,15 +68,11 @@ Def2019$añoocu <- 19
 
 Def2009$escodif <- NA
 
-Def2012$añoocu <-2012
-Def2013$añoocu <- 2013
 Def2013$ocudif <- NA
 
 names(Def2013)[names(Def2013)=="getdif"]<- "puedif"
 
-Def2014$añoocu <- 2014
-Def2015$añoreg <- 2015
-Def2015$añoocu <-2015
+
 
 # Quitando descripción
 
