@@ -1,7 +1,7 @@
 library(haven)
 library(foreign)
 library(dplyr)
-setwd("D:/AxelFolder/University/mineria_de_datos/ProyectoDataMining/defunciones_fetales")
+setwd("C:/Users/Kevin Macario/Desktop/Uvg/9no Semestre/Mineria de Datos/ProyectoDataMining/defunciones_fetales")
 
 #Obteniendo datasets
 DefFet2009 <- read_sav("defuncionesFetales2009.sav")
@@ -43,3 +43,4 @@ names(DefFet2012_2019)[names(DefFet2012_2019)=="NACIOM"] <- "NACIONM"
 DefFet2012_2019[, c("DEPREG", "MUPREG", "MESREG", "AÑOREG", "DEPOCU", "MUPOCU", "AREAG", "SEXO", "DIAOCU", "MESOCU", "AÑOOCU", "TIPAR", "CLAPAR", "VIAPAR", "SEMGES", "EDADM", "PAISREM", "DEPREM", "MUPREM", "PUEBLOPM", "ESCIVM", "NACIONM", "ESCOLAM", "CIUOMAD", "CAUDEF", "ASISREC", "SITIOOCU", "TOHITE", "TOHINM", "TOHIVI", "GRETNM")]
 
 DefFet2009_2019 <- rbind(DefFet2009_2011, DefFet2012_2019)
+write.csv(DefFet2009_2019,"Defunciones.csv",row.names = FALSE)
