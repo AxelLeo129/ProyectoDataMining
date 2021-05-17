@@ -1,6 +1,7 @@
 library(haven)
 library(foreign)
 library(dplyr)
+library(nortest)
 setwd("D:/AxelFolder/University/mineria_de_datos/ProyectoDataMining/defunciones_fetales")
 
 #Obteniendo datasets
@@ -43,3 +44,26 @@ names(DefFet2012_2019)[names(DefFet2012_2019)=="NACIOM"] <- "NACIONM"
 DefFet2012_2019[, c("DEPREG", "MUPREG", "MESREG", "AÑOREG", "DEPOCU", "MUPOCU", "AREAG", "SEXO", "DIAOCU", "MESOCU", "AÑOOCU", "TIPAR", "CLAPAR", "VIAPAR", "SEMGES", "EDADM", "PAISREM", "DEPREM", "MUPREM", "PUEBLOPM", "ESCIVM", "NACIONM", "ESCOLAM", "CIUOMAD", "CAUDEF", "ASISREC", "SITIOOCU", "TOHITE", "TOHINM", "TOHIVI", "GRETNM")]
 
 DefFet2009_2019 <- rbind(DefFet2009_2011, DefFet2012_2019)
+
+#Exportar como Excel
+write.csv(DefFet2009_2019,"defunciones_fetales.csv",row.names = FALSE)
+
+#Comportamientos
+depreg <- table(DefFet2009_2019$DEPREG)
+barplot(depreg, xlab = 'Frecuencia', main = 'Departamento de registro', col=rainbow(22))
+
+mupreg <- table(DefFet2009_2019$MUPREG)
+barplot(mupreg, xlab = 'Frecuencia', main = 'Municipio de registro', col=rainbow(2217))
+
+mesreg <- table(DefFet2009_2019$MESREG)
+barplot(mesreg, xlab = 'Frecuencia', main = 'Mes de registro', col=rainbow(12))
+
+anioreg <- table(DefFet2009_2019$AÑOREG)
+barplot(anioreg, xlab = 'Frecuencia', main = 'Año de registro', col=rainbow(10))
+
+hist(DefFet2009_2019$DEPREG,
+     main = "Cantidad de madres por departamentos",
+     xlab = "Departamento",
+     breaks = 50)
+
+
