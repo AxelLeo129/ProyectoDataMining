@@ -1,8 +1,12 @@
 library(haven)
 library(foreign)
 library(dplyr)
+<<<<<<< HEAD
 library(nortest)
 setwd("D:/AxelFolder/University/mineria_de_datos/ProyectoDataMining/defunciones_fetales")
+=======
+setwd("C:/Users/Kevin Macario/Desktop/Uvg/9no Semestre/Mineria de Datos/ProyectoDataMining/defunciones_fetales")
+>>>>>>> 0d814a58a471da1f7d6fb97688ab67be9195b8f6
 
 #Obteniendo datasets
 DefFet2009 <- read_sav("defuncionesFetales2009.sav")
@@ -44,6 +48,7 @@ names(DefFet2012_2019)[names(DefFet2012_2019)=="NACIOM"] <- "NACIONM"
 DefFet2012_2019[, c("DEPREG", "MUPREG", "MESREG", "AÑOREG", "DEPOCU", "MUPOCU", "AREAG", "SEXO", "DIAOCU", "MESOCU", "AÑOOCU", "TIPAR", "CLAPAR", "VIAPAR", "SEMGES", "EDADM", "PAISREM", "DEPREM", "MUPREM", "PUEBLOPM", "ESCIVM", "NACIONM", "ESCOLAM", "CIUOMAD", "CAUDEF", "ASISREC", "SITIOOCU", "TOHITE", "TOHINM", "TOHIVI", "GRETNM")]
 
 DefFet2009_2019 <- rbind(DefFet2009_2011, DefFet2012_2019)
+<<<<<<< HEAD
 
 #Exportar como Excel
 write.csv(DefFet2009_2019,"defunciones_fetales.csv",row.names = FALSE)
@@ -67,3 +72,6 @@ hist(DefFet2009_2019$DEPREG,
      breaks = 50)
 
 
+=======
+write.csv(DefFet2009_2019,"Defunciones.csv",row.names = FALSE)
+>>>>>>> 0d814a58a471da1f7d6fb97688ab67be9195b8f6
